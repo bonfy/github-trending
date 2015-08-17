@@ -7,8 +7,8 @@ from pyquery import PyQuery as pq
 import os
 
 
-def git_add_commit_push(filename):
-    cmd_git_add = 'git add .'
+def git_add_commit_push(date, filename):
+    cmd_git_add = 'git add {filename}'.format(filename=filename)
     cmd_git_commit = 'git commit -m "{filename}"'.format(filename=filename)
     cmd_git_push = 'git push -u origin master'
 
@@ -69,7 +69,7 @@ def main():
     scrape('javascript', filename)
 
     # git add commit push
-    git_add_commit_push(filename)
+    git_add_commit_push(strdate, filename)
 
 
 if __name__ == '__main__':
