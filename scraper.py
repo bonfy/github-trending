@@ -3,13 +3,15 @@
 import datetime
 import codecs
 import requests
-from pyquery import PyQuery as pq
 import os
+import schedule
+import time
+from pyquery import PyQuery as pq
 
 
 def git_add_commit_push(date, filename):
     cmd_git_add = 'git add {filename}'.format(filename=filename)
-    cmd_git_commit = 'git commit -m "{filename}"'.format(filename=filename)
+    cmd_git_commit = 'git commit -m "{date}"'.format(date=date)
     cmd_git_push = 'git push -u origin master'
 
     os.system(cmd_git_add)
@@ -25,7 +27,10 @@ def createMarkdown(date, filename):
 def scrape(language, filename):
 
     HEADERS = {
-        'User-Agent'		: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0', 'Accept'			: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Accept-Encoding'	: 'gzip,deflate,sdch', 'Accept-Language'	: 'zh-CN,zh;q=0.8'
+        'User-Agent'		: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0'
+        , 'Accept'			: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+        , 'Accept-Encoding'	: 'gzip,deflate,sdch'
+        , 'Accept-Language'	: 'zh-CN,zh;q=0.8'
     }
 
     url = 'https://github.com/trending?l={language}'.format(language=language)
@@ -52,10 +57,11 @@ def scrape(language, filename):
 
             print title, owner, description, url, ownerImg
             f.write("* <img src='" + ownerImg +
-                    "' height='20' width='20'>[" + title + "](" + url + "): " + description + "\n")
+                    "' height='20' width='20'>[" + title + "](" + url + "): "
+                    + description + "\n")
 
 
-def main():
+def job():
 
     strdate = datetime.datetime.now().strftime('%Y-%m-%d')
     filename = '{date}.md'.format(date=strdate)
@@ -73,4 +79,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    schedule.every().day.do(job)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
