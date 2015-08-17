@@ -9,7 +9,13 @@ need lib: pyquery, requests, schedule
 
 
 ```bash
-    $ pip install -r requirements.txt
+  $ pip install -r requirements.txt
+```
+
+run script:
+
+```python
+  $ python scraper.py
 ```
 
 
