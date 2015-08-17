@@ -12,7 +12,7 @@ need lib: pyquery, requests, schedule
   $ pip install -r requirements.txt
 ```
 
-make sure you have install th lib and then run script:
+make sure you have install the lib and then run script:
 
 ```python
   $ python scraper.py
