@@ -1,0 +1,5 @@
+cssselect==0.9.1
+lxml==3.4.3
+pyquery==1.2.9
+requests==2.5.3
+schedule==0.3.2
