@@ -65,7 +65,8 @@ def main():
 
     # TODO: use goroutinez
     scrape('python', filename)
-    scrape('java', filename)
+    scrape('swift', filename)
+    scrape('javascript', filename)
 
     # git add commit push
     git_add_commit_push(filename)
