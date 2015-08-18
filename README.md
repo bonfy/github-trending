@@ -5,8 +5,7 @@ Tracking the most popular Github repos, updated daily(Python version)
 
 inspired by [github-trending](https://github.com/josephyzhou/github-trending)
 
-need lib: pyquery, requests, schedule
-
+need lib: pyquery, requests
 
 ```bash
   $ pip install -r requirements.txt
