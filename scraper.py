@@ -4,7 +4,6 @@ import datetime
 import codecs
 import requests
 import os
-import schedule
 import time
 from pyquery import PyQuery as pq
 
@@ -79,7 +78,6 @@ def job():
 
 
 if __name__ == '__main__':
-    schedule.every().day.do(job)
     while True:
-        schedule.run_pending()
-        time.sleep(1)
+        job()
+        time.sleep(24*60*60)
