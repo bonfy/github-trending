@@ -26,10 +26,7 @@ def createMarkdown(date, filename):
 def scrape(language, filename):
 
     HEADERS = {
-        'User-Agent'		: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0'
-        , 'Accept'			: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
-        , 'Accept-Encoding'	: 'gzip,deflate,sdch'
-        , 'Accept-Language'	: 'zh-CN,zh;q=0.8'
+        'User-Agent'		: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0', 'Accept'			: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Accept-Encoding'	: 'gzip,deflate,sdch', 'Accept-Language'	: 'zh-CN,zh;q=0.8'
     }
 
     url = 'https://github.com/trending?l={language}'.format(language=language)
@@ -55,9 +52,8 @@ def scrape(language, filename):
             ownerImg = i("p.repo-list-meta a img").attr("src")
 
             print title, owner, description, url, ownerImg
-            f.write("* <img src='" + ownerImg +
-                    "' height='20' width='20'>[" + title + "](" + url + "): "
-                    + description + "\n")
+            f.write(u"* <img src='{ownerImg}' height='20' width='20'>[{title}]({url}):{description}\n".format(
+                ownerImg=ownerImg, title=title, url=url, description=description))
 
 
 def job():
@@ -80,4 +76,4 @@ def job():
 if __name__ == '__main__':
     while True:
         job()
-        time.sleep(24*60*60)
+        time.sleep(24 * 60 * 60)
