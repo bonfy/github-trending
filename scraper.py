@@ -20,7 +20,7 @@ def git_add_commit_push(date, filename):
 
 def createMarkdown(date, filename):
     with open(filename, 'w') as f:
-        f.write("###" + date + "\n")
+        f.write("## " + date + "\n")
 
 
 def scrape(language, filename):
@@ -43,7 +43,7 @@ def scrape(language, filename):
 
     # codecs to solve the problem utf-8 codec like chinese
     with codecs.open(filename, "a", "utf-8") as f:
-        f.write('\n####{language}\n'.format(language=language))
+        f.write('\n#### {language}\n'.format(language=language))
 
         for item in items:
             i = pq(item)
