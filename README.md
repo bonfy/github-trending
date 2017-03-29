@@ -28,6 +28,10 @@ A better place to use the script is in VPS
 
 Thus the code will run never stop
 
+## Special Day
+
+- [2017-03-29](https://github.com/bonfy/github-trending/blob/master/2017-03-29.md) - my repo [qiandao](https://github.com/bonfy/qiandao) record by github-trending(python)
+
 ## Lisence
 
 MIT
