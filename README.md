@@ -34,7 +34,7 @@ Thus the code will run never stop
 
 ## Sponsor
 
-![support](http://7i7k6w.com1.z0.glb.clouddn.com/weixin_alipay.jpg)
+![support](http://7i7k6w.com1.z0.glb.clouddn.com/weixin_alipay_new.jpg)
 
 ## Lisence
 
