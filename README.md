@@ -32,6 +32,10 @@ Thus the code will run never stop
 
 - [2017-03-29](https://github.com/bonfy/github-trending/blob/master/2017-03-29.md) - my repo [qiandao](https://github.com/bonfy/qiandao) record by github-trending(python)
 
+## Sponsor
+
+![support](http://7i7k6w.com1.z0.glb.clouddn.com/weixin_alipay.jpg)
+
 ## Lisence
 
 MIT
