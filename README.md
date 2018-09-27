@@ -30,7 +30,8 @@ Thus the code will run never stop
 
 ## Special Day
 
-- [2017-03-29](https://github.com/bonfy/github-trending/blob/master/2017-03-29.md) - my repo [qiandao](https://github.com/bonfy/qiandao) record by github-trending(python)
+- [2017-03-29](https://github.com/bonfy/github-trending/blob/master/2017/2017-03-29.md) - my repo [qiandao](https://github.com/bonfy/qiandao) record by github-trending(Python)
+- [2018-09-27](https://github.com/bonfy/github-trending/blob/master/2018-09-27.md) - my repo [go-mega](https://github.com/bonfy/go-mega) record by github-trending(Go)
 
 ## Sponsor
 
