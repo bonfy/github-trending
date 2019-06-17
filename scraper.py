@@ -39,7 +39,9 @@ def scrape(language, filename):
     # print(r.encoding)
 
     d = pq(r.content)
-    items = d('ol.repo-list li')
+    items = d('div.Box article.Box-row')
+
+    print(len(items))
 
     # codecs to solve the problem utf-8 codec like chinese
     with codecs.open(filename, "a", "utf-8") as f:
@@ -47,10 +49,10 @@ def scrape(language, filename):
 
         for item in items:
             i = pq(item)
-            title = i("h3 a").text()
-            owner = i("span.prefix").text()
+            title = i(".lh-condensed a").text()
+            owner = i(".lh-condensed span.text-normal").text()
             description = i("p.col-9").text()
-            url = i("h3 a").attr("href")
+            url = i(".lh-condensed a").attr("href")
             url = "https://github.com" + url
             # ownerImg = i("p.repo-list-meta a img").attr("src")
             # print(ownerImg)
