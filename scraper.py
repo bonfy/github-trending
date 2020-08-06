@@ -74,10 +74,8 @@ def job():
     scrape('go', filename)
 
     # git add commit push
-    git_add_commit_push(strdate, filename)
+    # git_add_commit_push(strdate, filename)
 
 
 if __name__ == '__main__':
-    while True:
-        job()
-        time.sleep(24 * 60 * 60)
+    job()
