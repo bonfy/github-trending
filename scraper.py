@@ -24,7 +24,6 @@ def createMarkdown(date, filename):
 
 
 def scrape(language, filename):
-
     HEADERS = {
         'User-Agent'		: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0',
         'Accept'			: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -35,13 +34,9 @@ def scrape(language, filename):
     url = 'https://github.com/trending/{language}'.format(language=language)
     r = requests.get(url, headers=HEADERS)
     assert r.status_code == 200
-
-    # print(r.encoding)
-
+    
     d = pq(r.content)
     items = d('div.Box article.Box-row')
-
-    print(len(items))
 
     # codecs to solve the problem utf-8 codec like chinese
     with codecs.open(filename, "a", "utf-8") as f:
@@ -60,7 +55,6 @@ def scrape(language, filename):
 
 
 def job():
-
     strdate = datetime.datetime.now().strftime('%Y-%m-%d')
     filename = '{date}.md'.format(date=strdate)
 
