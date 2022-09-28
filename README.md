@@ -34,6 +34,6 @@ Thus the code will run never stop
 
 ![support](https://raw.githubusercontent.com/bonfy/image/master/global/sponsor.jpg)
 
-## Lisence
+## Licence
 
 MIT
