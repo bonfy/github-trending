@@ -4,6 +4,7 @@
 name: Daily Github-Trending
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 2 * * *"
 
